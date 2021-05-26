@@ -60,10 +60,14 @@ struct NewsManager {
                 let name = article.source.name
                 let title = article.title
                 let imageURL = article.urlToImage
-                let url = URL(string: imageURL)
-                let data = try? Data(contentsOf: url!)
-                let image = UIImage(data: data!)
-                news.append(NewsModel(sourceName: name, newsTitle: title, newsImage: image!))
+                if let url = URL(string: imageURL) {
+                    if let data = try? Data(contentsOf: url) {
+                        let image = UIImage(data: data)
+                        news.append(NewsModel(sourceName: name, newsTitle: title, newsImage: image!))
+                    }
+                } else  {
+                    news.append(NewsModel(sourceName: name, newsTitle: title, newsImage: UIImage(named: "avataaar")!))
+                }
             }
             return news
         } catch {

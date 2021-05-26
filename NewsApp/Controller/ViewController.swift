@@ -14,7 +14,6 @@ class ViewController: UIViewController, NewsManagerDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var newsManager = NewsManager()
-    var getData = GetData()
     
     var newsArray = [NewsModel?]()
     //var myReturnedArray: [NewsModel?] = []
