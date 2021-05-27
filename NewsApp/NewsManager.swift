@@ -15,7 +15,7 @@ protocol NewsManagerDelegate {
 
 struct NewsManager {
     
-    var newsUrl = "https://newsapi.org/v2/top-headlines?country=in&apiKey=ae4b8574026848bebb4e6b7e274dd25b"
+    var newsUrl = "https://newsapi.org/v2/top-headlines?country=in&apiKey=YOUR_API_KEY"
     
     func fetchNews(topic: String)  {
         let urlString = "\(newsUrl)&category=\(topic)"
